@@ -5,9 +5,9 @@ from scipy.stats import chisquare # To perform mathematical algorithms
 
 
 def run_chisquare_audit():
-    db_config = { # Configuration information
-        "dbname": "postgres", "user": "postgres", "password": "Klarizzem22",
-        "host": "db.uyrbatqwdfsdvqnkfibf.supabase.co", "port": "5432"
+    db_config = { # Configuration information (Censored for security purposes)
+        "dbname": "-", "user": "-", "password": "-",
+        "host": "-", "port": "5432"
     }
 
     try:
