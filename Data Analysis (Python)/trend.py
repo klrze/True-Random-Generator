@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt # For data visualization
 import numpy as np # Numerical Python library
 
 try: # Config information for PostgreSQL
-    conn = psycopg2.connect( # Establishing database connection
-        dbname="postgres",
-        user="postgres",
-        password="Klarizzem22",
-        host="db.uyrbatqwdfsdvqnkfibf.supabase.co",
+    conn = psycopg2.connect( # Establishing database connection (Censored for security purposes)
+        dbname="-",
+        user="-",
+        password="-",
+        host="-",
         port="5432"
     )
     cur = conn.cursor() # Creates pipeline to execute queries
