@@ -2,13 +2,13 @@ import psycopg2 # Connects to PostgreSQL database
 import matplotlib.pyplot as plt # For data visualization
 
 try:
-    # Configuration information for PostgreSQL
+    # Configuration information for PostgreSQL (Censored for security purposes)
     conn = psycopg2.connect(
-        dbname="postgres",
-        user="postgres",
-        password="Klarizzem22",
-        host="db.uyrbatqwdfsdvqnkfibf.supabase.co",
-        port="5432"
+        dbname="-",
+        user="-",
+        password="-",
+        host="-",
+        port="-"
     )
     cur = conn.cursor() # Creates pipeline to execute queries
 
