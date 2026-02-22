@@ -1,0 +1,43 @@
+const int buttonPin = 7;
+const int tempPin = A0;   
+const int soundPin = A1;  
+const int photoPin = A2;  
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {
+    digitalWrite(13, HIGH);
+
+    // 1. GATHER RAW SENSOR DATA
+    long temp = analogRead(tempPin);
+    long sound = analogRead(soundPin);
+    long light = analogRead(photoPin);
+
+    // 2. THE ALGORITHM: XOR and Shift to create a unique seed
+    // We mix the values so a change in any sensor changes the whole seed
+    unsigned long trngSeed = (temp << 20) ^ (sound << 10) ^ light;
+    
+    // 3. GENERATE TRNG
+    // We seed the internal generator with our physical "noise"
+    randomSeed(trngSeed); 
+    int trng = random(0, 1001); // This is your Physical TRNG
+
+    // 4. GENERATE PRNG
+    // For the "Software" PRNG, we don't re-seed it, so it follows its own path
+    int prng = random(0, 1001);
+
+    // 5. SEND DATA
+    Serial.print("DATA,");
+    Serial.print(trng);
+    Serial.print(",");
+    Serial.println(prng);
+
+    delay(500); 
+    digitalWrite(13, LOW);
+  }
+}
