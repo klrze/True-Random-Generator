@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt # For data visualization
 import numpy as np # Numerical library
 
 try:
-    conn = psycopg2.connect( # Configuration information for PostgreSQL
-        dbname="postgres", user="postgres", password="Klarizzem22",
-        host="db.uyrbatqwdfsdvqnkfibf.supabase.co", port="5432"
+    conn = psycopg2.connect( # Configuration information for PostgreSQL (Censored for security purposes)
+        dbname="-", user="-", password="-",
+        host="-", port="5432"
     )
     cur = conn.cursor() # Creates pipeline to create queries
     cur.execute('SELECT prng_num, trng_num FROM raw_data;')  # Only fetching PRNG and TRNG
