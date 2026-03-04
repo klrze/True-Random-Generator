@@ -1,5 +1,5 @@
 /* Description:	Starts up Spring Boot app and initializes components
-				Example command in terminal: java -Dvault.passkey=PASSKEY -jar target/trng.jar
+				Example command in terminal: java -Dvault.passkey=PASSKEY -jar target/trng-0.0.1-SNAPSHOT.jar
 				Requires the correct passkey to proceed
 */
 package com.example.trng;
